@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recognition</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='predict.css') }}">
+</head>
+<body>
+    <div class="body">
+        <div class="wrapper">
+            <div class="image-container">
+               <img src="{{ url_for('static', filename=user_image) }}" alt="User uploaded image" width="300" height="300">
+            </div>
+
+            <p>This is letter: {{ prediction }}</p>
+
+            <form action="/" method="get">
+                <input type="submit" value="Return to previous page" class="blue-button">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

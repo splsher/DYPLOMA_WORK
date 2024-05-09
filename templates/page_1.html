@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main page</title>
+    <link rel="stylesheet" href="static/page_1.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="image-container">
+        </div>
+        <div class="button-container">
+            <h1>USL recognition</h1>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul>
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+            <form action="/predict" method="post" enctype="multipart/form-data">
+                <input type="file" name="image" id="image" accept=".png, .jpg, .jpeg">
+                <input type="submit" value="Classify">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
