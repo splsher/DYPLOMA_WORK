@@ -11,6 +11,7 @@ sample_image_path = r'C:\Users\Tania\PycharmProjects\DYPLOMA_WORK\test_images\bw
 
 img_size = (32, 32)
 
+
 img = Image.open(sample_image_path).convert('L')
 img = img.resize(img_size)
 img_array = np.array(img)
